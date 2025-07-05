@@ -33,20 +33,35 @@
     header h1 {
       margin: 0;
       font-size: 2.5em;
+
+      /* Gradient Animation */
+      background: linear-gradient(270deg, #00ffcc, #00ccaa, #00aaff, #00ffcc);
+      background-size: 600% 600%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: gradientShift 8s ease infinite;
     }
     nav {
       display: flex;
       align-items: center;
     }
     nav a {
-      color: #00ffcc;
       text-decoration: none;
       margin: 0 15px;
       font-weight: bold;
-      transition: color 0.3s;
+      display: flex;
+      align-items: center;
+
+      /* Animated gradient text */
+      background: linear-gradient(270deg, #00ffcc, #00ccaa, #00aaff, #00ffcc);
+      background-size: 600% 600%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: gradientShift 8s ease infinite;
+      transition: transform 0.3s;
     }
     nav a:hover {
-      color: #00ccaa;
+      transform: scale(1.1);
     }
     .github-link svg {
       vertical-align: middle;
@@ -65,7 +80,13 @@
     }
     main h1, main h2 {
       text-align: center;
-      color: #00ffcc;
+
+      /* Gradient Animation */
+      background: linear-gradient(270deg, #00ffcc, #00ccaa, #00aaff, #00ffcc);
+      background-size: 600% 600%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: gradientShift 8s ease infinite;
     }
     p {
       line-height: 1.6;
@@ -73,13 +94,19 @@
       margin-bottom: 20px;
     }
     a.support-link {
-      color: #00ffcc;
       text-decoration: none;
       font-weight: bold;
-      transition: color 0.3s;
+
+      /* Animated gradient text */
+      background: linear-gradient(270deg, #00ffcc, #00ccaa, #00aaff, #00ffcc);
+      background-size: 600% 600%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: gradientShift 8s ease infinite;
+      transition: transform 0.3s;
     }
     a.support-link:hover {
-      color: #00ccaa;
+      transform: scale(1.05);
     }
     section {
       margin-bottom: 50px;
@@ -96,11 +123,25 @@
       text-align: center;
     }
     footer a {
-      color: #00ffcc;
       text-decoration: none;
+
+      /* Animated gradient text */
+      background: linear-gradient(270deg, #00ffcc, #00ccaa, #00aaff, #00ffcc);
+      background-size: 600% 600%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: gradientShift 8s ease infinite;
+      transition: transform 0.3s;
     }
     footer a:hover {
-      color: #00ccaa;
+      transform: scale(1.05);
+    }
+
+    /* Gradient Animation Keyframes */
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
     }
   </style>
 </head>
@@ -114,7 +155,7 @@
       <a href="index.html">Home</a>
       <a href="download.html">Download</a>
       <a href="features.html">Features</a>
-      <a href="support.html" style="color:#00ccaa;">Support</a>
+      <a href="support.html">Support</a>
       <a href="https://github.com/RevMods3D" target="_blank" class="github-link" title="View on GitHub" aria-label="GitHub">
         <svg height="24" viewBox="0 0 16 16" version="1.1" width="24" aria-hidden="true">
           <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54
