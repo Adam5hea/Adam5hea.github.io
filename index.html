@@ -20,7 +20,6 @@
       align-items: center;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
     }
-    /* Left side: logo + title */
     .header-left {
       display: flex;
       align-items: center;
@@ -39,16 +38,22 @@
       align-items: center;
     }
     nav a {
-      color: #00ffcc;
       text-decoration: none;
       margin: 0 15px;
       font-weight: bold;
-      transition: color 0.3s;
       display: flex;
       align-items: center;
+
+      /* Animated gradient text */
+      background: linear-gradient(270deg, #00ffcc, #00ccaa, #00aaff, #00ffcc);
+      background-size: 600% 600%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: gradientShift 8s ease infinite;
+      transition: transform 0.3s;
     }
     nav a:hover {
-      color: #00ccaa;
+      transform: scale(1.1);
     }
     .github-link svg {
       vertical-align: middle;
@@ -75,38 +80,26 @@
       margin-bottom: 20px;
     }
     .download-button {
-      background-color: #00ffcc;
-      color: #121212;
-      padding: 15px 30px;
-      border: none;
-      border-radius: 5px;
-      font-size: 1.2em;
-      cursor: pointer;
-      text-decoration: none;
-      transition: background-color 0.3s;
-    }
+    padding: 20px 40px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.5em;
+    cursor: pointer;
+    text-decoration: none;
+    color: #121212;
+
+    /* Animated gradient background */
+    background: linear-gradient(270deg, #00ffcc, #00ccaa, #00aaff, #00ffcc);
+    background-size: 600% 600%;
+    animation: gradientShift 5s ease infinite, pulse 2s ease-in-out infinite;
+
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 0 15px #00ffcc;
+}
     .download-button:hover {
-      background-color: #00ccaa;
-    }
-    .features {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      padding: 40px 20px;
-    }
-    .feature-card {
-      background-color: #1e1e1e;
-      border-radius: 8px;
-      margin: 15px;
-      padding: 20px;
-      width: 250px;
-      text-align: center;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-      transition: transform 0.3s;
-    }
-    .feature-card:hover {
-      transform: scale(1.05);
-    }
+    transform: scale(1.1);
+    box-shadow: 0 0 25px #00ffcc;
+}
     footer {
       margin-top: 50px;
       padding: 20px;
@@ -121,6 +114,19 @@
     footer a:hover {
       color: #00ccaa;
     }
+
+    /* Gradient Animation */
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    
+    @keyframes pulse {
+    0% { box-shadow: 0 0 15px #00ffcc; }
+    50% { box-shadow: 0 0 25px #00ffcc; }
+    100% { box-shadow: 0 0 15px #00ffcc; }
+}
   </style>
 </head>
 <body>
@@ -130,10 +136,10 @@
       <h1>Chameleon Hub</h1>
     </div>
     <nav>
-      <a href="index.html" style="color:#00ccff;">Home</a>       <!-- Blue -->
-    <a href="download.html" style="color:#ff66cc;">Download</a> <!-- Pink -->
-    <a href="features.html" style="color:#ff3333;">Features</a> <!-- Red -->
-    <a href="support.html" style="color:#ffaa00;">Support</a>   <!-- Orange -->
+      <a href="index.html">Home</a>
+      <a href="download.html">Download</a>
+      <a href="features.html">Features</a>
+      <a href="support.html">Support</a>
       <a
         href="https://github.com/RevMods3D"
         target="_blank"
