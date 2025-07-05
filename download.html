@@ -6,7 +6,6 @@
   <title>Download - Chameleon Hub</title>
   <link href="https://fonts.googleapis.com/css2?family=Exo+2&display=swap" rel="stylesheet" />
   <style>
-    /* Use similar styles as your main site for consistency */
     body {
       margin: 0;
       font-family: 'Exo 2', sans-serif;
@@ -14,7 +13,60 @@
       color: #fff;
       text-align: center;
       padding: 50px 20px;
+      padding-top: 70px; /* space for fixed nav */
     }
+
+    /* Top navigation bar */
+    nav.top-nav {
+      width: 100%;
+      background-color: #1e1e1e;
+      padding: 15px 30px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.7);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 40px;
+      z-index: 1000;
+    }
+
+    /* Push links to right, logo to left */
+    nav.top-nav .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: #00ccaa;
+      font-weight: 700;
+      font-size: 1.3em;
+      text-decoration: none;
+      margin-right: auto; /* pushes other links right */
+    }
+
+    nav.top-nav .logo img {
+      height: 30px;
+      width: auto;
+      display: block;
+    }
+
+    nav.top-nav a {
+      color: #ccc;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.1em;
+      transition: color 0.3s;
+    }
+
+    nav.top-nav a:hover {
+      color: #00ccaa;
+    }
+
+    nav.top-nav a.active {
+      color: #00ccaa;
+      font-weight: 700;
+    }
+
     a.download-button {
       padding: 20px 40px;
       border: none;
@@ -35,6 +87,7 @@
       transform: scale(1.1);
       box-shadow: 0 0 25px #00ffcc;
     }
+
     @keyframes gradientShift {
       0% { background-position: 0% 50%; }
       50% { background-position: 100% 50%; }
@@ -45,6 +98,7 @@
       50% { box-shadow: 0 0 25px #00ffcc; }
       100% { box-shadow: 0 0 15px #00ffcc; }
     }
+
     footer {
       margin-top: 50px;
       padding: 20px;
@@ -55,10 +109,23 @@
   </style>
 </head>
 <body>
+
+  <nav class="top-nav">
+    <a href="index.html" class="logo">
+      <img src="path/to/chameleon-logo.png" alt="Chameleon Hub Logo" />
+      <span>Chameleon Hub</span>
+    </a>
+    <a href="index.html">Home</a>
+    <a href="download.html" class="active">Download</a>
+    <a href="features.html">Features</a>
+    <a href="support.html">Support</a>
+  </nav>
+
   <h1>Download Chameleon Hub</h1>
   <p>Get the latest version of Chameleon Hub below.</p>
   <a href="https://github.com/RevMods3D/ChameleonHub/releases/latest" class="download-button" target="_blank" rel="noopener noreferrer">Coming Soon</a>
 
   <footer>© 2025 RevMods3D | All rights reserved</footer>
+  
 </body>
 </html>
