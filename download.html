@@ -39,15 +39,30 @@
       align-items: center;
     }
     nav a {
-      color: #00ffcc;
-      text-decoration: none;
-      margin: 0 15px;
-      font-weight: bold;
-      transition: color 0.3s;
-    }
-    nav a:hover {
-      color: #00ccaa;
-    }
+  color: #00ffcc;
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #00ccaa;
+}
+
+nav a.animate {
+  /* Animated gradient text */
+  background: linear-gradient(270deg, #00ffcc, #00ccaa, #00aaff, #00ffcc);
+  background-size: 600% 600%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientShift 8s ease infinite;
+  transition: transform 0.3s;
+}
+
+nav a.animate:hover {
+  transform: scale(1.1);
+}
     .github-link svg {
       vertical-align: middle;
       fill: #00ffcc;
@@ -120,10 +135,10 @@
       <h1>Chameleon Hub</h1>
     </div>
     <nav>
-      <a href="index.html">Home</a>
+      <a href="index.html" class="animate">Home</a>
       <a href="download.html" style="color:#00ccaa;">Download</a>
-      <a href="features.html">Features</a>
-      <a href="support.html">Support</a>
+      <a href="features.html" class="animate">Features</a>
+      <a href="support.html" class="animate">Support</a>
       <a href="https://github.com/adam5hea" target="_blank" class="github-link" title="View on GitHub" aria-label="GitHub">
         <svg height="24" viewBox="0 0 16 16" version="1.1" width="24" aria-hidden="true">
           <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54
