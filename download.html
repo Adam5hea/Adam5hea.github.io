@@ -10,63 +10,63 @@
       margin: 0;
       font-family: 'Exo 2', sans-serif;
       background-color: #121212;
-      color: #fff;
+      color: #ffffff;
       text-align: center;
-      padding: 50px 20px;
-      padding-top: 70px; /* space for fixed nav */
     }
-
-    /* Top navigation bar */
-    nav.top-nav {
-      width: 100%;
+    header {
       background-color: #1e1e1e;
-      padding: 15px 30px;
-      position: fixed;
-      top: 0;
-      left: 0;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.7);
+      padding: 20px;
       display: flex;
+      justify-content: space-between;
       align-items: center;
-      justify-content: center;
-      gap: 40px;
-      z-index: 1000;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.5);
     }
-
-    /* Push links to right, logo to left */
-    nav.top-nav .logo {
+    .header-left {
       display: flex;
       align-items: center;
       gap: 10px;
-      color: #00ccaa;
-      font-weight: 700;
-      font-size: 1.3em;
-      text-decoration: none;
-      margin-right: auto; /* pushes other links right */
     }
-
-    nav.top-nav .logo img {
-      height: 30px;
-      width: auto;
-      display: block;
+    .header-left img {
+      height: 40px;
+      width: 40px;
     }
-
-    nav.top-nav a {
-      color: #ccc;
+    header h1 {
+      margin: 0;
+      font-size: 2.5em;
+    }
+    nav {
+      display: flex;
+      align-items: center;
+    }
+    nav a {
+      color: #00ffcc;
       text-decoration: none;
-      font-weight: 600;
-      font-size: 1.1em;
+      margin: 0 15px;
+      font-weight: bold;
       transition: color 0.3s;
     }
-
-    nav.top-nav a:hover {
+    nav a:hover {
       color: #00ccaa;
     }
-
-    nav.top-nav a.active {
-      color: #00ccaa;
-      font-weight: 700;
+    .github-link svg {
+      vertical-align: middle;
+      fill: #00ffcc;
+      transition: transform 0.3s, fill 0.3s;
     }
-
+    .github-link:hover svg {
+      transform: scale(1.2);
+      fill: #00ccaa;
+    }
+    main {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+    main h2 {
+      text-align: center;
+      font-size: 3em;
+      margin-bottom: 40px;
+    }
     a.download-button {
       padding: 20px 40px;
       border: none;
@@ -87,7 +87,6 @@
       transform: scale(1.1);
       box-shadow: 0 0 25px #00ffcc;
     }
-
     @keyframes gradientShift {
       0% { background-position: 0% 50%; }
       50% { background-position: 100% 50%; }
@@ -98,34 +97,61 @@
       50% { box-shadow: 0 0 25px #00ffcc; }
       100% { box-shadow: 0 0 15px #00ffcc; }
     }
-
     footer {
-      margin-top: 50px;
+      margin-top: 60px;
       padding: 20px;
       background-color: #1e1e1e;
       color: #777;
       text-align: center;
     }
+    footer a {
+      color: #00ffcc;
+      text-decoration: none;
+    }
+    footer a:hover {
+      color: #00ccaa;
+    }
   </style>
 </head>
 <body>
+  <header>
+    <div class="header-left">
+      <img src="chameleon-icon.png" alt="Chameleon Hub Logo" />
+      <h1>Chameleon Hub</h1>
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="download.html" style="color:#00ccaa;">Download</a>
+      <a href="features.html">Features</a>
+      <a href="support.html">Support</a>
+      <a href="https://github.com/adam5hea" target="_blank" class="github-link" title="View on GitHub" aria-label="GitHub">
+        <svg height="24" viewBox="0 0 16 16" version="1.1" width="24" aria-hidden="true">
+          <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54
+            2.29 6.53 5.47 7.59.4.07.55-.17.55-.38
+            0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52
+            0-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87
+            2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95
+            0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0
+            .67-.21 2.2.82a7.65 7.65 0 0 1 2.003-.27c.68
+            0 1.36.092 2.003.27 1.53-1.04 2.2-.82 2.2-.82.44
+            1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87
+            3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01
+            1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013
+            0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+        </svg>
+      </a>
+    </nav>
+  </header>
 
-  <nav class="top-nav">
-    <a href="index.html" class="logo">
-      <img src="path/to/chameleon-logo.png" alt="Chameleon Hub Logo" />
-      <span>Chameleon Hub</span>
-    </a>
-    <a href="index.html">Home</a>
-    <a href="download.html" class="active">Download</a>
-    <a href="features.html">Features</a>
-    <a href="support.html">Support</a>
-  </nav>
+  <main>
+    <h2>Download Chameleon Hub</h2>
+    <p>Get the latest version of Chameleon Hub below.</p>
+    <a href="https://github.com/RevMods3D/ChameleonHub/releases/latest" class="download-button" target="_blank" rel="noopener noreferrer">Coming Soon</a>
+  </main>
 
-  <h1>Download Chameleon Hub</h1>
-  <p>Get the latest version of Chameleon Hub below.</p>
-  <a href="https://github.com/RevMods3D/ChameleonHub/releases/latest" class="download-button" target="_blank" rel="noopener noreferrer">Coming Soon</a>
-
-  <footer>© 2025 RevMods3D | All rights reserved</footer>
-  
+  <footer>
+    © 2025 RevMods3D | Follow us on
+    <a href="https://github.com/adam5hea" target="_blank">GitHub</a>
+  </footer>
 </body>
 </html>
