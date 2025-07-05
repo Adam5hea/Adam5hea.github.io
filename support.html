@@ -10,24 +10,95 @@
       margin: 0;
       font-family: 'Exo 2', sans-serif;
       background-color: #121212;
-      color: #fff;
+      color: #ffffff;
       padding: 40px 20px;
-      max-width: 700px;
+      max-width: 800px;
       margin-left: auto;
       margin-right: auto;
     }
-    h1 {
-      text-align: center;
-      margin-bottom: 20px;
+    header {
+      background-color: #1e1e1e;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+      margin: -40px -20px 40px -20px;
     }
-    a {
+    .header-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .header-left img {
+      height: 40px;
+      width: 40px;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2em;
+      color: #00ffcc;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background: linear-gradient(270deg, #00ffcc, #00ccaa, #00aaff, #00ffcc);
+      background-size: 600% 600%;
+      animation: gradientShift 8s ease infinite;
+    }
+    nav {
+      display: flex;
+      align-items: center;
+    }
+    nav a {
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+
+      /* Animated gradient text */
+      background: linear-gradient(270deg, #00ffcc, #00ccaa, #00aaff, #00ffcc);
+      background-size: 600% 600%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: gradientShift 8s ease infinite;
+      transition: transform 0.3s;
+    }
+    nav a:hover {
+      transform: scale(1.1);
+    }
+    .github-link svg {
+      vertical-align: middle;
+      fill: #00ffcc;
+      transition: transform 0.3s, fill 0.3s;
+    }
+    .github-link:hover svg {
+      transform: scale(1.2);
+      fill: #00ccaa;
+    }
+    h1, h2 {
+      color: #00ffcc;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    p {
+      line-height: 1.6;
+      font-size: 1.1em;
+    }
+    a.support-link {
       color: #00ffcc;
       text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+      background: linear-gradient(270deg, #00ffcc, #00ccaa, #00aaff, #00ffcc);
+      background-size: 600% 600%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: gradientShift 8s ease infinite;
     }
-    a:hover {
+    a.support-link:hover {
       color: #00ccaa;
     }
-    .contact-info, .faq {
+    section {
       margin-bottom: 40px;
     }
     footer {
@@ -37,25 +108,80 @@
       color: #777;
       text-align: center;
     }
+
+    /* Gradient Animation */
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
   </style>
 </head>
 <body>
-  <h1>Support</h1>
-  
-  <section class="contact-info">
-    <h2>Contact Us</h2>
-    <p>Email: <a href="mailto:support@revmods3d.com">support@revmods3d.com</a></p>
-    <p>GitHub: <a href="https://github.com/RevMods3D" target="_blank" rel="noopener noreferrer">github.com/RevMods3D</a></p>
-  </section>
+  <header>
+    <div class="header-left">
+      <img src="Resources/Chameleon_hub_icon.png" alt="Chameleon Hub Logo" />
+      <h1>Chameleon Hub</h1>
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="download.html">Download</a>
+      <a href="features.html">Features</a>
+      <a href="support.html">Support</a>
+      <a
+        href="https://github.com/RevMods3D"
+        target="_blank"
+        class="github-link"
+        title="View on GitHub"
+        aria-label="GitHub"
+      >
+        <svg
+          height="24"
+          viewBox="0 0 16 16"
+          version="1.1"
+          width="24"
+          aria-hidden="true"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M8 0C3.58 0 0 3.58 0 8c0 3.54
+             2.29 6.53 5.47 7.59.4.07.55-.17.55-.38
+             0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52
+             0-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87
+             2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95
+             0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0
+             .67-.21 2.2.82a7.65 7.65 0 0 1 2.003-.27c.68
+             0 1.36.092 2.003.27 1.53-1.04 2.2-.82 2.2-.82.44
+             1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87
+             3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01
+             1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013
+             0 0 0 16 8c0-4.42-3.58-8-8-8z"
+          ></path>
+        </svg>
+      </a>
+    </nav>
+  </header>
 
-  <section class="faq">
-    <h2>Frequently Asked Questions</h2>
-    <p><strong>Q:</strong> How do I install Chameleon Hub?<br />
-       <strong>A:</strong> Download the latest release and run the installer.</p>
-    <p><strong>Q:</strong> Where can I report bugs?<br />
-       <strong>A:</strong> Please use the GitHub Issues page on our repository.</p>
-  </section>
+  <main>
+    <h1>Support</h1>
 
-  <footer>© 2025 RevMods3D | All rights reserved</footer>
+    <section>
+      <h2>Contact Us</h2>
+      <p>Email: <a href="mailto:support@revmods3d.com" class="support-link">support@revmods3d.com</a></p>
+      <p>GitHub: <a href="https://github.com/RevMods3D" target="_blank" rel="noopener noreferrer" class="support-link">github.com/RevMods3D</a></p>
+    </section>
+
+    <section>
+      <h2>Frequently Asked Questions</h2>
+      <p><strong>Q:</strong> How do I install Chameleon Hub?<br />
+         <strong>A:</strong> Download the latest release from the <a href="download.html" class="support-link">Download page</a> and run the installer.</p>
+      <p><strong>Q:</strong> Where can I report bugs?<br />
+         <strong>A:</strong> Please use the <a href="https://github.com/RevMods3D/ChameleonHub/issues" target="_blank" rel="noopener noreferrer" class="support-link">GitHub Issues page</a> on our repository.</p>
+    </section>
+  </main>
+
+  <footer>
+    © 2025 RevMods3D | All rights reserved
+  </footer>
 </body>
 </html>
