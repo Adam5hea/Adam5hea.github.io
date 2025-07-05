@@ -44,7 +44,19 @@
       font-weight: bold;
       transition: color 0.3s;
     }
-    nav a:hover {
+    /* Gradient Animation Only for Selected Buttons */
+    nav a.animate {
+      background: linear-gradient(270deg, #00ffcc, #00ccaa, #00aaff, #00ffcc);
+      background-size: 600% 600%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: gradientShift 8s ease infinite;
+      transition: transform 0.3s;
+    }
+    nav a.animate:hover {
+      transform: scale(1.1);
+    }
+    nav a:hover:not(.animate) {
       color: #00ccaa;
     }
     .github-link svg {
@@ -112,6 +124,12 @@
     footer a:hover {
       color: #00ccaa;
     }
+    /* Gradient Animation Keyframes */
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
   </style>
 </head>
 <body>
@@ -121,10 +139,10 @@
       <h1>Chameleon Hub</h1>
     </div>
     <nav>
-      <a href="index.html">Home</a>
-      <a href="download.html">Download</a>
+      <a href="index.html" class="animate">Home</a>
+      <a href="download.html" class="animate">Download</a>
       <a href="features.html" style="color:#00ccaa;">Features</a>
-      <a href="support.html">Support</a>
+      <a href="support.html" class="animate">Support</a>
       <a href="https://github.com/adam5hea" target="_blank" class="github-link" title="View on GitHub" aria-label="GitHub">
         <svg height="24" viewBox="0 0 16 16" version="1.1" width="24" aria-hidden="true">
           <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54
