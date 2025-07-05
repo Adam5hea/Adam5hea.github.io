@@ -100,6 +100,13 @@
     transform: scale(1.1);
     box-shadow: 0 0 25px #00ffcc;
 }
+.gradient-title h2, .p1 {
+  background: linear-gradient(270deg, #00ffcc, #00ccaa, #00aaff, #00ffcc);
+  background-size: 600% 600%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientShift 8s ease infinite;
+}
     footer {
       margin-top: 50px;
       padding: 20px;
@@ -174,12 +181,33 @@
     </nav>
   </header>
 
+  <!-- Hero Section -->
   <section class="hero">
     <h2>Welcome to Chameleon Hub</h2>
     <p class="hero-info">
-    Your all-in-one tool for managing game files, exploring vehicle data, and much more.  
-    Visit our <a href="download.html" class="hero-link">Download page</a> to get started.
-  </p>
+      Your all-in-one tool for managing game files, exploring vehicle data, and much more.  
+      Visit our <a href="download.html" class="hero-link">Download page</a> to get started.
+    </p>
+  </section>
+
+  <!-- About Section -->
+  <section class="gradient-title">
+    <h2>What is Chameleon Hub?</h2>
+    <p>
+      Chameleon Hub is a simple modding tool built to help you explore, manage, and customize game files with ease.  
+      Whether you're inspecting vehicle data or navigating complex game resources, Chameleon Hub streamlines the process.
+    </p>
+
+    <h2>Supported Games</h2>
+    <p class="p1">Currently supported:</p>
+<ul class="gradient-title">
+  <li>Need for Speed: Most Wanted (2012)</li>
+</ul>
+<p class="p1">Future games</p>
+<ul class="gradient-title">
+  <li>Need for Speed: Hot Pursuit</li>
+  <li>Need for Speed: Hot Pursuit Remastered</li>
+</ul>
   </section>
 
   <footer>
