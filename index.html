@@ -4,17 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chameleon Hub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2&display=swap" rel="stylesheet">
     <style>
         body {
             margin: 0;
-            font-family: Arial, sans-serif;
+            font-family: 'Exo 2', sans-serif;
             background-color: #121212;
             color: #ffffff;
-            text-align: center;
         }
         header {
             background-color: #1e1e1e;
             padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             box-shadow: 0 2px 4px rgba(0,0,0,0.5);
         }
         header h1 {
@@ -26,12 +29,25 @@
             text-decoration: none;
             margin: 0 15px;
             font-weight: bold;
+            transition: color 0.3s;
         }
         nav a:hover {
-            text-decoration: underline;
+            color: #00ccaa;
         }
-        .content {
-            padding: 50px 20px;
+        .hero {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 80vh;
+            background: url('https://via.placeholder.com/1600x500/1e1e1e/00ffcc?text=Chameleon+Hub+Banner') no-repeat center center;
+            background-size: cover;
+            text-align: center;
+            padding: 20px;
+        }
+        .hero h2 {
+            font-size: 3em;
+            margin-bottom: 20px;
         }
         .download-button {
             background-color: #00ffcc;
@@ -42,19 +58,41 @@
             font-size: 1.2em;
             cursor: pointer;
             text-decoration: none;
+            transition: background-color 0.3s;
         }
         .download-button:hover {
             background-color: #00ccaa;
+        }
+        .features {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding: 40px 20px;
+        }
+        .feature-card {
+            background-color: #1e1e1e;
+            border-radius: 8px;
+            margin: 15px;
+            padding: 20px;
+            width: 250px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.5);
+            transition: transform 0.3s;
+        }
+        .feature-card:hover {
+            transform: scale(1.05);
         }
         footer {
             margin-top: 50px;
             padding: 20px;
             background-color: #1e1e1e;
             color: #777;
+            text-align: center;
         }
     </style>
 </head>
 <body>
+
     <header>
         <h1>Chameleon Hub</h1>
         <nav>
@@ -65,14 +103,33 @@
         </nav>
     </header>
 
-    <div class="content">
+    <section class="hero">
         <h2>Welcome to Chameleon Hub</h2>
-        <p>Your ultimate tool for Need for Speed modding.</p>
         <a class="download-button" href="#">Download Now</a>
-    </div>
+    </section>
+
+    <section class="features">
+        <div class="feature-card">
+            <h3>📂 File Browser</h3>
+            <p>Browse and manage your game files with ease.</p>
+        </div>
+        <div class="feature-card">
+            <h3>🔍 Hex Viewer</h3>
+            <p>Inspect and analyze game data in real-time.</p>
+        </div>
+        <div class="feature-card">
+            <h3>🚗 Vehicle Database</h3>
+            <p>Access detailed vehicle information quickly.</p>
+        </div>
+        <div class="feature-card">
+            <h3>⚙️ .dat & .bndl Support</h3>
+            <p>Seamlessly handle game resource files.</p>
+        </div>
+    </section>
 
     <footer>
-        © 2025 Chameleon Hub | All rights reserved
+        © 2025 Chameleon Hub | Follow us on <a href="https://github.com/adam5hea" target="_blank" style="color:#00ffcc;">GitHub</a>
     </footer>
+
 </body>
 </html>
